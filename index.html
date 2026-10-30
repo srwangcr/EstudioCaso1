@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Registro de estudiantes</h1>
+    <p>SC-502 Ambiente Web Cliente Servidor · Estudio de caso 1</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Agregar estudiante</h2>
+      <form id="form-estudiante" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana">
+        </div>
+        <div class="campo">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Ej. Vargas Solís">
+        </div>
+        <div class="campo">
+          <label for="nota">Nota (0 a 100)</label>
+          <input type="number" id="nota" name="nota" min="0" max="100" step="any" placeholder="Ej. 85">
+        </div>
+        <button type="submit" class="boton">Agregar estudiante</button>
+      </form>
+      <p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-tabla">
+      <h2 id="titulo-tabla">Lista de estudiantes</h2>
+      <div class="tabla-wrap">
+        <table id="tabla-estudiantes">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Nota</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-resumen">
+      <h2 id="titulo-resumen">Resumen</h2>
+      <dl class="resumen">
+        <div>
+          <dt>Mayor nota</dt>
+          <dd id="resumen-mayor">—</dd>
+        </div>
+        <div>
+          <dt>Promedio</dt>
+          <dd id="resumen-promedio">—</dd>
+        </div>
+        <div>
+          <dt>Nota más baja</dt>
+          <dd id="resumen-menor">—</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Universidad Fidélitas · Ingeniería en Sistemas de Computación</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
